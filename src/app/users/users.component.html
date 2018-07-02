@@ -1,0 +1,35 @@
+<nav>
+    <div class="nav-wrapper">
+      <a  class="brand-logo">GitApp</a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a class="waves-effect waves-light btn" (click)="backtosearch()">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div *ngFor="let ud of userDetails | keyvalues">
+      <table>
+          <colgroup>
+            <col style="width:40%">
+            <col style="width:60%">
+          </colgroup> 
+        <tr (click)="gotoUser(ud.value.login)">
+          <td>
+            <img class="avatar" src="{{ud.value.avatar_url}}" alt="ud.value.login">
+          </td>
+          <td class="left-align" >
+            <div class="row">
+              <div class="col s12 m5">
+                <div class="card-panel teal">
+                  <span class="white-text center-align">{{ud.value.login}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>

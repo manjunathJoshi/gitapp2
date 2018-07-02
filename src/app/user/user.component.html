@@ -1,0 +1,57 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="brand-logo">GitApp</a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <a class="waves-effect waves-light btn" (click)="backtolist()">Back To List</a>
+        <a class="waves-effect waves-light btn" (click)="backtohome()">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="col-lg-12 col-sm-12">
+  <div class="card hovercard">
+    <div class="card-background">
+      <img class="card-bkimg" alt="" src="{{currentUser.avatar_url}}">
+    </div>
+    <div class="useravatar">
+      <img alt="" src="{{currentUser.avatar_url}}" alt="currentUser.login">
+    </div>
+    <div class="card-info">
+      <span class="card-title">{{currentUser.login}}</span>
+
+    </div>
+  </div>
+  <div class="row">
+      <div class="col s12 m6 l3"><p>Followers</p><p class="badge count-color">{{followerscount}}</p></div>
+      <div class="col s12 m6 l3"><p>Subscriptions</p><p class="badge count-color">{{subscriptionscount}}</p></div>
+      <div class="col s12 m6 l3"><p>Repositories</p><p class="badge count-color">{{reposcount}}</p></div>
+      <div class="col s12 m6 l3"><p>Organizations</p><p class="badge count-color">{{orgscount}}</p></div>
+  </div>
+
+<!-- 
+
+  <div class="well">
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="tab1">
+        <h3>This is tab 1</h3>
+      </div>
+      <div class="tab-pane fade in" id="tab2">
+        <h3>This is tab 2</h3>
+      </div>
+      <div class="tab-pane fade in" id="tab3">
+        <h3>{{followers}}</h3>
+      </div>
+    </div>
+  </div> -->
+  <div>
+      <h4 align="center"><span class="label label-default">Repository List</span></h4>
+  <div *ngFor="let repo of repodetails">
+    <div class="panel-group">
+      <div class="panel panel-info" >
+        <a class="panel-heading" href= "{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
+        <div class="panel-body">{{repo.description}}</div>
+      </div>
+    </div>
+  </div>
+</div>
